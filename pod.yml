@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-otus
+spec:
+  containers:
+    - name: otus-container
+      image: botalovegor46/otus:0.0.1
+      ports:
+        - containerPort: 8000
