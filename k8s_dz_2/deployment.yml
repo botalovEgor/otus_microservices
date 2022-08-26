@@ -17,7 +17,10 @@ spec:
     spec:
       containers:
         - name: otus-app
-          image: botalovegor46/otus:1.0.0
+          image: botalovegor46/otus:1.0.2
           ports:
             - name: otus-port
               containerPort: 8000
+      initContainers:
+        - name: liquibase-otus
+          image: botalovegor46/liquibase-otus:1.0.1
