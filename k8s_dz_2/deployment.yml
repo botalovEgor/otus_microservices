@@ -21,6 +21,12 @@ spec:
           ports:
             - name: otus-port
               containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: otus-db-config
       initContainers:
         - name: liquibase-otus
           image: botalovegor46/liquibase-otus:1.0.1
+          envFrom:
+            - configMapRef:
+                name: otus-db-config
