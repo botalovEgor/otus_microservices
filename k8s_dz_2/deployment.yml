@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: otus-app
-          image: botalovegor46/otus:1.0.2
+          image: botalovegor46/otus:1.0.3
           ports:
             - name: otus-port
               containerPort: 8000
