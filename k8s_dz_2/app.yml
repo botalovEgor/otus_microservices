@@ -24,9 +24,13 @@ spec:
           envFrom:
             - configMapRef:
                 name: otus-db-config
+            - secretRef:
+                name: otus-db-secrets
       initContainers:
         - name: liquibase-otus
           image: botalovegor46/liquibase-otus:1.0.1
           envFrom:
             - configMapRef:
                 name: otus-db-config
+            - secretRef:
+                name: otus-db-secrets

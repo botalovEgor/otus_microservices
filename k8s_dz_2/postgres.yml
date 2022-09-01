@@ -38,6 +38,8 @@ spec:
         envFrom:
           - configMapRef:
               name: postgres-db-config
+          - secretRef:
+              name: otus-db-secrets
         volumeMounts:
         - name: postgredb
           mountPath: /var/lib/postgresql/data
