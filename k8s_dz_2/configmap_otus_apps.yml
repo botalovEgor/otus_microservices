@@ -4,6 +4,6 @@ metadata:
   name: "otus-db-config"
   namespace: otus
 data:
-  DB_URL: "jdbc:postgresql://172.17.0.9/postgres"
+  DB_URL: "jdbc:postgresql://postgres-service/postgres"
   DB_USER: "postgres"
   DB_PASSWORD: "1"
