@@ -3,7 +3,6 @@ kind: ConfigMap
 metadata:
   name: db-config
 data:
-  DRIVER_CLASS_NAME: "{{.Values.db.driver_class_name}}"
-  DB_NAME: "{{.Values.db.name}}"
-  DB_URL: "jdbc:postgresql://{{ .Release.Name }}-postgres-service"
+  DRIVER_CLASS_NAME: {{.Values.db.driver_class_name}}
+  DB_URL: jdbc:postgresql://{{ .Release.Name }}-postgres-service/{{.Values.db.name}}
 

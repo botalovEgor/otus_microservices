@@ -1,7 +1,7 @@
 image:
   names:
-    app: botalovegor46/otus:1.0.6
-    liquibase: botalovegor46/liquibase-otus:1.0.2
+    app: botalovegor46/otus:1.0.7
+    liquibase: botalovegor46/liquibase-otus:1.0.1
     postgres: postgres:12
 
 replicas:
