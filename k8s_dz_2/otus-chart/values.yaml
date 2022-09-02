@@ -1,0 +1,31 @@
+image:
+  names:
+    app: botalovegor46/otus:1.0.6
+    liquibase: botalovegor46/liquibase-otus:1.0.2
+    postgres: postgres:12
+
+replicas:
+  app: 3
+  postgres: 1
+
+configmaps:
+  db: db-config
+  app: app-config
+secrets:
+  db: db-secrets
+
+db:
+  driver_class_name: org.postgresql.Driver
+  name: postgres
+  user: postgres
+  password: 1
+
+ports:
+  app: 8000
+  postgres: 5432
+
+app:
+  name: otus
+
+ingress:
+  host: arch.homework

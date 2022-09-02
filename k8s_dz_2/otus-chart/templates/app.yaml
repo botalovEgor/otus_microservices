@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-app-deployment
+  labels:
+    app: {{ .Release.Name }}-deployment
+spec:
+  replicas: {{.Values.replicas.app}}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-app
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-app
+    spec:
+      containers:
+        - name: {{ .Release.Name }}-app
+          image: {{.Values.image.names.app}}
+          ports:
+            - containerPort: {{ .Values.ports.app }}
+          envFrom:
+            - configMapRef:
+                name: {{.Values.configmaps.db}}
+            - configMapRef:
+                name: {{.Values.configmaps.app}}
+            - secretRef:
+                name: {{.Values.secrets.db}}
+      initContainers:
+        - name: {{ .Release.Name }}-liquibase-otus
+          image: {{.Values.image.names.liquibase}}
+          envFrom:
+            - configMapRef:
+                name: {{.Values.configmaps.db}}
+            - secretRef:
+                name: {{.Values.secrets.db}}
