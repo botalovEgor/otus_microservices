@@ -1,6 +1,6 @@
 image:
   names:
-    app: botalovegor46/otus:1.0.7
+    app: botalovegor46/otus:1.0.12
     liquibase: botalovegor46/liquibase-otus:1.0.1
     postgres: postgres:12
 
@@ -21,11 +21,20 @@ db:
   password: 1
 
 ports:
-  app: 8000
-  postgres: 5432
+  app:
+    name: app-port
+    number: 8000
+  postgres:
+    name: db-port
+    number: 5432
 
 app:
   name: otus
 
 ingress:
   host: arch.homework
+
+metrics:
+  app:
+    interval: 15s
+    path: /actuator/prometheus

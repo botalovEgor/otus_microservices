@@ -18,7 +18,7 @@ spec:
         - name: {{ .Release.Name }}-app
           image: {{.Values.image.names.app}}
           ports:
-            - containerPort: {{ .Values.ports.app }}
+            - containerPort: {{ .Values.ports.app.number }}
           envFrom:
             - configMapRef:
                 name: {{.Values.configmaps.db}}

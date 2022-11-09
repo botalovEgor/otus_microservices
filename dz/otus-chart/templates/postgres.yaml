@@ -17,7 +17,7 @@ spec:
       - name: {{ .Release.Name }}-postgres
         image: {{.Values.image.names.postgres}}
         ports:
-        - containerPort: {{.Values.ports.postgres}}
+        - containerPort: {{.Values.ports.postgres.number}}
         envFrom:
           - configMapRef:
               name: {{.Values.configmaps.db}}

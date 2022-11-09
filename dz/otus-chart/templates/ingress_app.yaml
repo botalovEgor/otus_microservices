@@ -12,6 +12,6 @@ spec:
               service:
                 name: {{ .Release.Name }}-app-service
                 port:
-                  number: {{.Values.ports.app}}
+                  number: {{.Values.ports.app.number}}
             pathType: Prefix
             path: /

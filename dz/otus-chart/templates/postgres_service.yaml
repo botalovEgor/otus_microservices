@@ -5,7 +5,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: {{.Values.ports.postgres}}
-      targetPort: {{.Values.ports.postgres}}
+    - port: {{.Values.ports.postgres.number}}
+      name: {{.Values.ports.postgres.name}}
+      targetPort: {{.Values.ports.postgres.number}}
   selector:
     app: {{ .Release.Name }}-postgres
